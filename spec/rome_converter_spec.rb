@@ -56,26 +56,25 @@ RSpec.describe RomeConverter, "#both" do
       expect(res.to_rome(2222)).to eq "MMCCXXII"
     end
 
+    it "converts 10,100 and 1000" do
+      expect(res.to_rome(10)).to eq "X"
+      expect(res.to_rome(100)).to eq "C"
+      expect(res.to_rome(1000)).to eq "M"
+    end
+
     it "converts 50 and 500" do
       expect(res.to_rome(50)).to eq "L"
       expect(res.to_rome(500)).to eq "D"
     end
 
-    it "converts 10,100 and 1000" do
-      expect(res.to_rome(10)).to eq "X"
-      expect(res.to_rome(100)).to eq "C"
-      expect(res.to_rome(1000)).to eq "M"
-
-    end
-    it "converts 90 and 900" do
-      expect(res.to_rome(90)).to eq "XC"
-      expect(res.to_rome(900)).to eq "CM"
-
-    end
     it "converts 40 and 400" do
       expect(res.to_rome(40)).to eq "XL"
       expect(res.to_rome(400)).to eq "CD"
+    end
 
+    it "converts 90 and 900" do
+      expect(res.to_rome(90)).to eq "XC"
+      expect(res.to_rome(900)).to eq "CM"
     end
 
   end
@@ -110,6 +109,27 @@ RSpec.describe RomeConverter, "#both" do
     end
     it "converts 4999(max) " do
       expect(res.to_dec("MMMMCMXCIX")).to eq 4999
+    end
+
+    it "converts 10,100 and 1000" do
+      expect(res.to_dec("X")).to eq 10
+      expect(res.to_dec("C")).to eq 100
+      expect(res.to_dec("M")).to eq 1000
+    end
+
+    it "converts 50 and 500" do
+      expect(res.to_dec("L")).to eq 50
+      expect(res.to_dec("D")).to eq 500
+    end
+
+    it "converts 40 and 400" do
+      expect(res.to_dec("XL")).to eq 40
+      expect(res.to_dec("CD")).to eq 400
+    end
+
+    it "converts 90 and 900" do
+      expect(res.to_dec("XC")).to eq 90
+      expect(res.to_dec("CM")).to eq 900
     end
 
     it "big nums" do
