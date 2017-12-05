@@ -89,7 +89,6 @@ RSpec.describe RomeConverter, "#both" do
       expect(res.to_dec("III")).to eq 3
       expect(res.to_dec("IV")).to eq 4
       expect(res.to_dec("V")).to eq 5
-
     end
 
     it "tests nums 6 to 10" do
