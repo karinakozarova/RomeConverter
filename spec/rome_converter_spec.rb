@@ -38,10 +38,10 @@ RSpec.describe RomeConverter, "#both" do
       expect(res.to_rome(0)).to eq ""
     end
 
-    it "converts 2017" do
+    it "tests 2017" do
       expect(res.to_rome(2017)).to eq "MMXVII"
     end
-    it "converts 4999(max)" do
+    it "tests 4999(max)" do
       expect(res.to_rome(4999)).to eq "MMMMCMXCIX"
     end
 
@@ -56,23 +56,23 @@ RSpec.describe RomeConverter, "#both" do
       expect(res.to_rome(2222)).to eq "MMCCXXII"
     end
 
-    it "converts 10,100 and 1000" do
+    it "tests 10,100 and 1000" do
       expect(res.to_rome(10)).to eq "X"
       expect(res.to_rome(100)).to eq "C"
       expect(res.to_rome(1000)).to eq "M"
     end
 
-    it "converts 50 and 500" do
+    it "tests 50 and 500" do
       expect(res.to_rome(50)).to eq "L"
       expect(res.to_rome(500)).to eq "D"
     end
 
-    it "converts 40 and 400" do
+    it "tests 40 and 400" do
       expect(res.to_rome(40)).to eq "XL"
       expect(res.to_rome(400)).to eq "CD"
     end
 
-    it "converts 90 and 900" do
+    it "tests 90 and 900" do
       expect(res.to_rome(90)).to eq "XC"
       expect(res.to_rome(900)).to eq "CM"
     end
@@ -104,30 +104,31 @@ RSpec.describe RomeConverter, "#both" do
       expect(res.to_dec("")).to eq 0
     end
 
-    it "converts 2017" do
+    it "tests 2017" do
       expect(res.to_rome(2017)).to eq "MMXVII"
     end
-    it "converts 4999(max) " do
+
+    it "tests 4999(max) " do
       expect(res.to_dec("MMMMCMXCIX")).to eq 4999
     end
 
-    it "converts 10,100 and 1000" do
+    it "tests 10,100 and 1000" do
       expect(res.to_dec("X")).to eq 10
       expect(res.to_dec("C")).to eq 100
       expect(res.to_dec("M")).to eq 1000
     end
 
-    it "converts 50 and 500" do
+    it "tests 50 and 500" do
       expect(res.to_dec("L")).to eq 50
       expect(res.to_dec("D")).to eq 500
     end
 
-    it "converts 40 and 400" do
+    it "tests 40 and 400" do
       expect(res.to_dec("XL")).to eq 40
       expect(res.to_dec("CD")).to eq 400
     end
 
-    it "converts 90 and 900" do
+    it "tests 90 and 900" do
       expect(res.to_dec("XC")).to eq 90
       expect(res.to_dec("CM")).to eq 900
     end
@@ -141,8 +142,5 @@ RSpec.describe RomeConverter, "#both" do
       expect(res.to_dec("MCCXXI")).to eq 1221
       expect(res.to_dec("MCMXCIX")).to eq 1999
       expect(res.to_dec("MMCCXXII")).to eq 2222
-
     end
-
-
   end
