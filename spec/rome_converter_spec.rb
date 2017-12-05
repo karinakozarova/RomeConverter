@@ -41,7 +41,7 @@ RSpec.describe RomeConverter, "#both" do
     it "converts 2017" do
       expect(res.to_rome(2017)).to eq "MMXVII"
     end
-    it "converts 4999(max) " do
+    it "converts 4999(max)" do
       expect(res.to_rome(4999)).to eq "MMMMCMXCIX"
     end
 
@@ -54,6 +54,28 @@ RSpec.describe RomeConverter, "#both" do
       expect(res.to_rome(1221)).to eq "MCCXXI"
       expect(res.to_rome(1999)).to eq "MCMXCIX"
       expect(res.to_rome(2222)).to eq "MMCCXXII"
+    end
+
+    it "converts 50 and 500" do
+      expect(res.to_rome(50)).to eq "L"
+      expect(res.to_rome(500)).to eq "D"
+    end
+
+    it "converts 10,100 and 1000" do
+      expect(res.to_rome(10)).to eq "X"
+      expect(res.to_rome(100)).to eq "C"
+      expect(res.to_rome(1000)).to eq "M"
+
+    end
+    it "converts 90 and 900" do
+      expect(res.to_rome(90)).to eq "XC"
+      expect(res.to_rome(900)).to eq "CM"
+
+    end
+    it "converts 40 and 400" do
+      expect(res.to_rome(40)).to eq "XL"
+      expect(res.to_rome(400)).to eq "CD"
+
     end
 
   end
@@ -96,7 +118,7 @@ RSpec.describe RomeConverter, "#both" do
       expect(res.to_dec("LXXVII")).to eq 77
       expect(res.to_dec("CXXIII")).to eq 123
       expect(res.to_dec("CLXIV")).to eq 164
-      expect(res.to_dec("MCCXXI")).to eq 1221     
+      expect(res.to_dec("MCCXXI")).to eq 1221
       expect(res.to_dec("MCMXCIX")).to eq 1999
       expect(res.to_dec("MMCCXXII")).to eq 2222
 
