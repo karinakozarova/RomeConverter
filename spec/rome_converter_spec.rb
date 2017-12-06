@@ -1,4 +1,4 @@
-require "../lib"
+require "rome_converter"
 
 RSpec.describe RomeConverter, "#both" do
 
