@@ -4,7 +4,6 @@ RSpec.describe RomeConverter, "#both" do
 
   context "testing conversion of roman numbers to decimal and back to roman: " do
     res = RomeConverter.new
-
     it "loop through all examples to make sure every single number works back and forth between to_dec and to_rome" do
       for i in 0..4999 do
           result = res.to_rome(i);
@@ -14,10 +13,8 @@ RSpec.describe RomeConverter, "#both" do
     end
   end
 
-
   context "testing conversion of integers to roman numbers: " do
     res = RomeConverter.new
-
     it "tests nums 1 to 5" do
       expect(res.to_rome(1)).to eq "I"
       expect(res.to_rome(2)).to eq "II"
@@ -76,20 +73,16 @@ RSpec.describe RomeConverter, "#both" do
       expect(res.to_rome(90)).to eq "XC"
       expect(res.to_rome(900)).to eq "CM"
     end
-
   end
-
 
   context "testing conversion of roman numbers to decimal: " do
     res = RomeConverter.new
-
     it "tests nums 1 to 5" do
       expect(res.to_dec("I")).to eq 1
       expect(res.to_dec("II")).to eq 2
       expect(res.to_dec("III")).to eq 3
       expect(res.to_dec("IV")).to eq 4
       expect(res.to_dec("V")).to eq 5
-
     end
 
     it "tests nums 6 to 10" do
